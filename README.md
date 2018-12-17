@@ -1,3 +1,16 @@
+Groupe 13 - Mario
+
+Rayan ADAMCZAK
+Maêva BENZINA
+Baptiste ITIER
+Mathias VINCELET
+Justine TAISANT
+
+https://battletimate.netlify.com/
+
+
+
+
 # `OXO` game library
 
 This is a boilerplate repository using `OXO`, a minimalist game library to handle common actions in games. This is not optimized for production and uses purposefully simplified patterns for an educational purpose.
