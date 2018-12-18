@@ -4,14 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel src/index.html src/screens/*.html",
-    "build": "parcel build src/index.html src/screens/*.html"
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.10.0",
     "parcel-bundler": "^1.10.3"
+  },
+  "dependencies": {
+    "parcel": "^1.10.3"
   }
 }
