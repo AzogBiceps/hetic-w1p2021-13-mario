@@ -1,5 +1,5 @@
-// oxo.inputs.listenKey('enter', function() {
-//   if (oxo.screens.getCurrentScreen !== 'src/screens/home') {
-//     oxo.screens.loadScreen('src/screens/home', home);
-//   }
-// });
+oxo.inputs.listenKey('enter', function() {
+  if (oxo.screens.getCurrentScreen !== 'home') {
+    oxo.screens.loadScreen('home', home);
+  }
+});

@@ -487,6 +487,7 @@ window.oxo = {
         listener = oxo.inputs.keysListeners[event.keyCode];
         if (listener) {
           listener.action();
+          
 
           if (listener.once) {
             delete oxo.inputs.keysListeners[event.keyCode];
