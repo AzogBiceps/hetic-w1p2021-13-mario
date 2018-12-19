@@ -595,6 +595,7 @@ window.oxo = {
             oxo.log('Load screen ' + name);
             oxo.player.refreshScore();
             oxo.animation.getMovableElement();
+            oxo.screens.currentScreen = name;
 
             if (action) {
               action.call();

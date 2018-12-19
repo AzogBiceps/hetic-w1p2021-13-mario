@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #171717;
+    overflow: hidden;
+  }
+
+img {
+  max-width: 300%;
+  max-height: 100%;
+}
+
+.home__logo--end {
+  height: 250px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.crown1 {
+  display: flex;
+  width: 200px;
+  height: 100px;
+}
+
+.crown2 {
+  display: flex;
+  width: 200px;
+  height: 100px;
+}
+
+.winner {
+   font-size: 16px;
+   transform: translateY(-45px);
+   justify-content: space-evenly;
+ }
+
+ .button__pressToStart--end {
+   font-size: 30px;
+   position: relative;
+   top: 100px;
+   animation: blink 4s infinite;
+ }
+
+ @keyframes blink {
+  0%{color: rgb(48, 48, 48);}
+  15%{color: rgb(0, 148, 185);}
+  30%{color: rgb(255, 0, 0);}
+  30%{color: rgb(48, 48, 48);;}
+  45%{color: rgb(0, 206, 86);}
+  60%{color: orange;}
+  75%{color: rgb(48, 48, 48);}
+  100%{color: rgb(161, 10, 175);}
+ }
