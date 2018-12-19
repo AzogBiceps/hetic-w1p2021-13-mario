@@ -97,9 +97,13 @@ function map(){
   })
 
   document.getElementById("go").addEventListener("click", function(){
-      console.log("Map sélectionnée")
       data.map = map
-
       console.log(data)
+
+      oxo.screens.loadScreen('game', game);
   })
+}
+
+function game(){
+  console.log("GameVie")
 }
