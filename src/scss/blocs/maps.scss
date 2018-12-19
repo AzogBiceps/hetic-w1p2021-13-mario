@@ -9,6 +9,10 @@
 //   line-height: 1;
 //   background: #555555;
 // }
+
+.maps {
+  background: #373131;
+}
 .arrow {
     width: 30px;
     height: 30px;
@@ -24,7 +28,7 @@
   animation: 1s appear 1 forwards;
 }
 
-.element {
+.element__maps {
   width: 202px;
   height: inherit;
   margin: 0 7px 0 0;
@@ -33,23 +37,19 @@
   border-radius: 30px;
 }
 
-.element.arena {
+.element__maps.arena {
   background: url('../images/maps/arena.jpg') 45% 0 no-repeat;
   background-size: cover;
 }
-.element.gladiator {
+.element__maps.gladiator {
   background: url('../images/maps/gladiator.jpg') 45% 0 no-repeat;
   background-size: cover;
 }
-.element.ring {
+.element__maps.ring {
   background: url('../images/maps/ring.jpg') 45% 0 no-repeat;
   background-size: cover;
 }
-
-  .pen {
-    max-width: 1000px;
-  }
-  .element {
+  .element__maps {
     width:  250px;
     height: 250px;
     margin-left: 20px;
@@ -60,33 +60,22 @@
   }
 
 @-webkit-keyframes appear {
-  15% {
-    opacity: 0;
-  }
   100% {
     opacity: 1;
   }
 }
 @-moz-keyframes appear {
-  15% {
-    opacity: 0;
-  }
+  
   100% {
     opacity: 1;
   }
 }
 @-o-keyframes appear {
-  15% {
-    opacity: 0;
-  }
   100% {
     opacity: 1;
   }
 }
 @keyframes appear {
-  15% {
-    opacity: 0;
-  }
   100% {
     opacity: 1;
   }
@@ -98,6 +87,6 @@
 .selectedPlayerTwo {
   border: 10px red solid;
 }
-.band{
+.band__maps{
   margin-top:20px;
 }

@@ -1,6 +1,6 @@
 .home {
   background-color:#171717;
-  font-family: 'PressStart2P';
+  // font-family: 'PressStart2P';
   text-align: center;
   // margin: 0;
   // padding: 0;
@@ -30,16 +30,15 @@
   font-family: 'PressStart2P', 'atari_full', sans-serif;
   font-size: 20px;
   position: relative;
-  top: 100px;
-
-  background-color: none;
-  border: none;
-  color: white;
+  top: 120px;
+  // border: none;
+  // color: white;
   padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
+  // text-align: center;
+  // text-decoration: none;
+  // display: inline-block;
   font-size: 16px;
+  height: 70px;
 }
 
 @keyframes blink {
@@ -53,25 +52,23 @@
   100%{color: rgb(161, 10, 175);}
 }
 
-
-
-// img {
-//   max-width: 300%;
-//   max-height: 100%;
-// }
-
-
-
 .home__gif--mathias {
-  transform: translate(00px);
+  // transform: translate(00px);
+  height: 350px;
+  width: auto;
+}
+
+
+.home__gif {
+  display: flex;
+  // align-items: center;
+  height: 480px;
+  margin-left: 68px;
 }
 
 .home__gif--brontis {
-  transform: translate(730px);
-}
-.home__gif {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
+  transform: translate(670px);
   height: 350px;
+  width: auto;
 }
+

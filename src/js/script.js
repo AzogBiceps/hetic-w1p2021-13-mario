@@ -1,9 +1,9 @@
 oxo.inputs.listenKey('enter', function() {
-  
+
   if (oxo.screens.getCurrentScreen() !== 'home') {
-    
+
     oxo.screens.currentScreen = "home"
-    
+
     oxo.screens.loadScreen('home', (callback) => {
       console.log(callback)
     });
@@ -11,10 +11,10 @@ oxo.inputs.listenKey('enter', function() {
 });
 
 oxo.inputs.listenKey('enter', function() {
-  
+
   console.log(oxo.screens.getCurrentScreen())
   if (oxo.screens.getCurrentScreen() == 'home') {
-    
+
     oxo.screens.loadScreen('characters', character);
   }
 });
@@ -31,7 +31,7 @@ function character() {
   var elements = document.querySelectorAll('div.element');
   var count = 0;
   let players = []
-  
+
   elements.forEach(element => {
     element.addEventListener('click', function() {
       console.log(count);
@@ -41,7 +41,7 @@ function character() {
         element.classList.add("selected");
         count++;
       } else if (count == 1 && !element.className.includes("selected")) {
-        
+
         console.log('add other')
         players.push(element.className.split(' ')[1])
         element.classList.add(document.querySelector('.selectedPlayerTwo') ? 'selected' : 'selectedPlayerTwo');
@@ -53,12 +53,12 @@ function character() {
         element.classList.remove('selectedPlayerTwo');
       }
       console.log(players);
-      
+
     })
   });
-  
+
   // document.getElementById("back").addEventListener("click", function(){
-  
+
   //   // data.player1 = players[0]
   //   players = []
   //   count = 0
@@ -71,7 +71,7 @@ function character() {
     console.log("Go")
     data.player1 = players[0]
     data.player2 = players[1]
-    
+
     oxo.screens.loadScreen('maps', map);
   });
 }
