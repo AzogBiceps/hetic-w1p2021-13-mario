@@ -122,18 +122,18 @@ function game(){
 
 
 
-/** PARTIE GAME */
+/* GAME */
 
 function game(){
-  //création du tableau des joueurs avec des stats de base
+  //creation of players array with basics stats
   let players = initFighters(data);
 
-  // si turn = true J1 joue sinon J2 joue
+  // if turn = true J1 plays, else J2 plays
   let turn = true;
 
   while(getLife(players[0])!=0 && getLife(players[1])!=0){
-    if(turn){ //J1 Joue
-      // ici il faut récuperer la touche de l'utilisateur 1 et mettre l'action dans la fonction a la place de atk exemple: atk,soin,def
+    if(turn){ //J1 plays
+      // here we need to get back the user 1 key and put the action in the function      ici il faut récuperer la touche de l'utilisateur 1 et mettre l'action dans la fonction a la place de atk exemple: atk,soin,def
       action(turn,players,'atk');
       turn = !turn;
     } else {
@@ -143,27 +143,27 @@ function game(){
     }
   }
 
-  //J1 a toujours de la vie il gagne
+  //if J1 still has life then he wins
   if(getLife(players[0]) > 0){
-    //ici il faut charger la page final avec j1 en gagnant
+    //here we need to load the final page with J1 as winner
     console.log('J1 a gagné');
-  } else { //ici il faut charger la page final avec j2 en gagnant
+  } else { //here we need to load the final page with J2 as winner
     console.log('J2 a gagné')  ;
   }
 }
 
 
 /**
-* action réalisé par un personnage
-* @param {turn} boolean - true si j1 joue et false si j2 joue
-* @param {players} array - tableau des objets joueurs
-* @param {type} string - action du joueur
+* actios done by a character
+* @param {turn} boolean - true if j1 plays and false if j2 plays
+* @param {players} array - array of players objects    tableau des objets joueurs
+* @param {type} string - players' actions
 */
 function action(turn,players,type){
   let player1 = players[0];
   let player2 = players[1];
 
-  //J1 joue
+  //J1 plays
   if(turn){
       //action en fonction du type
       switch(type) {
