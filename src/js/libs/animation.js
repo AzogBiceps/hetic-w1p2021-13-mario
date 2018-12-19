@@ -266,6 +266,3 @@
   sprite_sheet.image.src = "animation.png";// Start loading the image.
 
 })();
-
-</body>
-</html>

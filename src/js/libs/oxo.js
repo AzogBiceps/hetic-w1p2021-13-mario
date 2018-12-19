@@ -51,9 +51,12 @@ window.oxo = {
 
         if (
           !oxo.elements.obstacles.every(function(obstacle) {
-            return !oxo.elements.elementsAreColliding(
-              obstacle.getBoundingClientRect(),
-              elFuturePos
+            return (
+              obstacle == element ||
+              !oxo.elements.elementsAreColliding(
+                obstacle.getBoundingClientRect(),
+                elFuturePos
+              )
             );
           })
         ) {
@@ -487,7 +490,6 @@ window.oxo = {
         listener = oxo.inputs.keysListeners[event.keyCode];
         if (listener) {
           listener.action();
-          
 
           if (listener.once) {
             delete oxo.inputs.keysListeners[event.keyCode];
