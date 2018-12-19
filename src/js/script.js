@@ -48,13 +48,26 @@ function character() {
         count++;
       } else if (element.className.includes("selected")) {
         count--;
-        players = players.splice(players.indexOf(element.className.split(' ')[1]) - 1, 1);
+        players = players.filter(function(player) { return player != element.className.split(' ')[1]; });
+        players[count] == undefined;
+        console.log(players[1]);
         element.classList.remove('selected');
         element.classList.remove('selectedPlayerTwo');
       }
       console.log(players);
+        document.getElementById("go").addEventListener("click", function(){
+      if (players[1] !== undefined && players[0] !== undefined) {
 
+          console.log("Go")
+          data.player1 = players[0]
+          data.player2 = players[1]
+      
+          oxo.screens.loadScreen('maps', map);
+      }
+          
+        });
     })
+
   });
 
   // document.getElementById("back").addEventListener("click", function(){
@@ -67,17 +80,10 @@ function character() {
   //     element.classList.remove("selectedPlayerTwo");
   //   })
   // });
-  document.getElementById("go").addEventListener("click", function(){
-    console.log("Go")
-    data.player1 = players[0]
-    data.player2 = players[1]
-
-    oxo.screens.loadScreen('maps', map);
-  });
 }
 
 function map(){
-  var elements = document.querySelectorAll('div.element');
+  var elements = document.querySelectorAll('div.element__maps');
   var count = 0;
   let map;
 
