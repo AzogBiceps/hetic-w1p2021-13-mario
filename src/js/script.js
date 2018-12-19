@@ -9,3 +9,20 @@ oxo.inputs.listenKey('enter', function() {
     });
   }
 });
+
+oxo.inputs.listenKey('enter', function() {
+
+  if (oxo.screens.getCurrentScreen() == 'home') {
+
+    oxo.screens.currentScreen = "game"
+  }
+});
+
+
+
+
+
+// // Lancer jeu tout bouton homepage
+// document.addEventListener("keydown", function(event) {
+//   window.location.href = "game";
+// });

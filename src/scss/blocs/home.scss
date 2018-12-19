@@ -1,27 +1,37 @@
-// base {
-//   box-sizing: border-box;
-// }
-
-// html {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   height: 100%;
-//   background: #FFCC80;
-//   text-align: center;
-//   font-family: monospace;
-//   line-height: 1.4;
-//   font-size: 25px;
-// }
-// pre {
-//   text-align: left;
-// }
-
 body {
-  background-color: blue;
+  background-color:#171717;
+  font-family: 'PressStart2P';
+  text-align: center;
+  // margin: 0;
+  // padding: 0;
 }
 
-.home__button {
+.home__logo img {
+  height: 250px;
+  // display: flex;
+  // justify-content: center;
+  margin-top: 20px;
+}
+
+// .home__button {
+//   background-color: none;
+//   border: none;
+//   color: white;
+//   padding: 15px 32px;
+//   text-align: center;
+//   text-decoration: none;
+//   display: inline-block;
+//   font-size: 16px;
+//   transform: translateY(-45px);
+// }
+
+.button__pressToStart {
+  animation: blink 4s infinite;
+  font-family: 'PressStart2P', 'atari_full', sans-serif;
+  font-size: 20px;
+  position: relative;
+  top: 100px;
+
   background-color: none;
   border: none;
   color: white;
@@ -30,10 +40,7 @@ body {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-}
-
-.button__pressToStart {
-  animation: blink 3s infinite;
+  transform: translateY(-45px);
 }
 
 @keyframes blink {
@@ -47,7 +54,25 @@ body {
   100%{color: rgb(161, 10, 175);}
 }
 
-.home__logo {
-  left: 50%;
-  right: 50%;
+
+
+// img {
+//   max-width: 300%;
+//   max-height: 100%;
+// }
+
+
+
+.home__gif--mathias {
+  transform: translate(00px);
+}
+
+.home__gif--brontis {
+  transform: translate(730px);
+}
+.home__gif {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 350px;
 }
