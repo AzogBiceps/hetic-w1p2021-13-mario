@@ -271,7 +271,7 @@ A player attacks the other one
 */
 function attack(playerAtk,playerDef){
   //J2 is in defense
-  if(playerDef != 0){
+  if(playerDef.def != 0){
     semiAttack(playerDef);
     playerDef.def = 0;
   } else {
