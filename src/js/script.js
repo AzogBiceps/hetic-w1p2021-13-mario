@@ -63,7 +63,7 @@ function character() {
   oxo.inputs.listenKey('enter', function() {
 
     console.log(oxo.screens.getCurrentScreen());
-    if (oxo.screens.getCurrentScreen() == 'home') {
+    if (oxo.screewns.getCurrentScreen() == 'home') {
 
       oxo.screens.loadScreen('characters', character);
     }
@@ -109,10 +109,10 @@ function map(){
   })
 }
 
-function game(){
-  console.log("GameVie");
-  console.log(data);
-}
+// function game(){
+//   console.log("GameVie");
+//   console.log(data);
+// }
 
 
 
@@ -136,6 +136,15 @@ oxo.inputs.listenKey('enter', function() {
   if (oxo.screens.getCurrentScreen() == 'home') {
 
     oxo.screens.loadScreen('characters', character);
+  }
+});
+
+oxo.inputs.listenKey('space', function() {
+
+  console.log(oxo.screens.getCurrentScreen())
+  if (oxo.screens.getCurrentScreen() == 'game') {
+
+    oxo.screens.loadScreen('end', end);
   }
 });
 
@@ -172,7 +181,6 @@ function character() {
         element.classList.remove('selected');
         element.classList.remove('selectedPlayerTwo');
       }
-      console.log(players);
 
     })
   });
@@ -187,7 +195,7 @@ function character() {
   //     element.classList.remove("selectedPlayerTwo");
   //   })
   // });
-  
+
   document.getElementById("go").addEventListener("click", function(){
     console.log("Go");
     data.player1 = players[0];
@@ -204,57 +212,64 @@ function character() {
 /** GAME */
 
 function game(){
+  /*creation of players array with basics stats
+  creation of the players table with basic stats*/
   console.log(data);
-  //creation of players array with basics stats
-  //creation of the players table with basic stats
-  let players = initFighters(data);
+  function initFighters(data){
+    //on créer un tab avec J1 et J2 comportant des caractéristiques
+    //create a tab with J1 and J2 with features
+    //let players = [];
+    players.push({'name':data.player1,'LP':10,'def':0},{'name':data.player2,'LP':10,'def':0});
 
-  // si turn = true J1 joue sinon J2 joue
-  //if turn = true J1 plays otherwise J2 plays
+    return players }};
+
+  // let players = initFighters(data);
+  // console.log(players);
+  // // si turn = true J1 joue sinon J2 joue
+  // //if turn = true J1 plays otherwise J2 plays
   let turn = true;
   let player1 = players[0];
   let player2 = players[1];
 
   while(getLife(player1)!=0 && getLife(player2)!=0){
-    if(turn){ //J1 Joue
-      //J1 plays
-      // ici il faut récuperer la touche de l'utilisateur 1 et mettre l'action dans la fonction a la place de atk exemple: atk,soin,def 
-      //here you need to retrieve the user key 1 and put the action in the function instead of atk example: atk,heal,def     
+    if(turn){
+       // J1 plays
+       // ici il faut récuperer la touche de l'utilisateur 1 et mettre l'action dans la fonction a la place de atk exemple: atk,soin,def 
+       //here you need to retrieve the user key 1 and put the action in the function instead of atk example: atk,heal,def     
       oxo.inputs.listenKeyOnce('q', function() {
         console.log('q');
         action(player2,player1,'atk');
         turn = !turn;
       });
     } else {
-      // ici il faut récuperer la touche de l'utilisateur 2 et mettre l'action dans la fonction a la place de atk exemple: atk,soin,def
-      //here you need to retrieve the user key 2 and put the action in the function instead of atk example: atk,heal,def 
+       // ici il faut récuperer la touche de l'utilisateur 2 et mettre l'action dans la fonction a la place de atk exemple: atk,soin,def
+       //here you need to retrieve the user key 2 and put the action in the function instead of atk example: atk,heal,def 
       oxo.inputs.listenKeyOnce('k', function() {
         action(player2,player1,'atk');
         turn = !turn;
       });
     }
 
-    //J1 a toujours de la vie il gagne
-    //J1 always has life he wins
-    if(getLife(player1) > 0){
-      //ici il faut charger la page final avec j1 en gagnant
-      //here you need to load the final page with J1 by winning
-      console.log('J1 a gagné');
-    } else { //ici il faut charger la page final avec j2 en gagnant
-      //here you need to load the final page with J2 by winning
-      console.log('J2 a gagné')  ;
-    }
+  //J1 a toujours de la vie il gagne
+  //J1 always has life he wins
+  if(getLife(player1) > 0){
+   //ici il faut charger la page final avec j1 en gagnant
+   //here you need to load the final page with J1 by winning
+    console.log('J1 a gagné');
+  } else { //ici il faut charger la page final avec j2 en gagnant
+   //here you need to load the final page with J2 by winning
+    console.log('J2 a gagné')  ;
   }
-
+}
 
   /**
   * action réalisé par un personnage
   * action realized by a character
-  * @param {playerAtk} object - joueur qui joue Player who plays
-  * @param {playerDef} object - joueur ennemie Player enemy
-  * @param {type} string - action du joueur Action of the player
+   @param {playerAtk} object - joueur qui joue Player who plays
+   @param {playerDef} object - joueur ennemie Player enemy
+   @param {type} string - action du joueur Action of the player
   */
-  /*function action(playerAtk,playerDef,type){
+  function action(playerAtk,playerDef,type){
     //action en fonction du type
     //Action according to the type
     switch(type) {
@@ -267,13 +282,13 @@ function game(){
       default:
       attack(playerAtk,playerDef);
     }
-  } */
+  }
 
   /**
-  * Un joueur attaque l'autre
-  *A player attacks the other one
-  * @param {playerAtk} object - joueur qui joue Player who plays
-  * @param {playerDef} object - joueur ennemie Player enemy
+   Un joueur attaque l'autre
+  A player attacks the other one
+   @param {playerAtk} object - joueur qui joue Player who plays
+   @param {playerDef} object - joueur ennemie Player enemy
   */
   function attack(playerAtk,playerDef){
 
@@ -338,14 +353,13 @@ function game(){
   /**
   * Initialise l'état initial des deux combattants
   *Initializes the initial state of the two combatants
-  * @param {datas} tableau - contient les deux joueurs et la map contains both players and map
+  * @param {data} tableau - contient les deux joueurs et la map contains both players and map
   * @return {players} -Tableau composé des deux joueurs avec des caractéristiques de combat Table composed of the two players with combat characteristics
   */
-  function initFighters(datas){
-    //on créer un tab avec J1 et J2 comportant des caractéristiques
-    //create a tab with J1 and J2 with features
-    let players = [];
-    players.push({'name':datas.player1,'LP':10,'def':0},{'name':datas.player2,'LP':10,'def':0});
-  }
-    return players;
-  }
+  // function initFighters(data){
+  //   //on créer un tab avec J1 et J2 comportant des caractéristiques
+  //   //create a tab with J1 and J2 with features
+  // //  let players = [];
+  //   players.push({'name':data.player1,'LP':10,'def':0},{'name':data.player2,'LP':10,'def':0});
+
+  //   return players }};
