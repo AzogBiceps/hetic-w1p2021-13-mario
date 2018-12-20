@@ -62,3 +62,15 @@ position: absolute;
   75%{color: rgb(48, 48, 48);}
   100%{color: rgb(161, 10, 175);}
  }
+
+ .winner__name {
+   text-transform: capitalize;
+   text-align: center;
+   font-family: 'PressStart2P';
+   margin-top: 20px;
+   color: white;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+ }
