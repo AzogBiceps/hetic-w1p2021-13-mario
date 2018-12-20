@@ -36,6 +36,7 @@
   &.is-maeva {
     background-image: url(../images/fighters/Maeva/MaevaNormalG.png);
     background-size: cover;
+    margin-left: 70px;
   }
   &.is-baptiste {
     background-image: url(../images/fighters/Baptiste/BaptisteNormalG.png);
@@ -105,9 +106,27 @@
 }
 
 .background {
-  width:100wh;
-  height:100wh;
- 
+  width:100vw;
+  height:100vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+
+
+  &.is-arena {
+    background-image: url(../images/maps/arena.jpg) ;
+    background-size: cover;
+  }
+  &.is-gladiator {
+    background-image: url(../images/maps/gladiator.jpg) ;
+    background-size: cover;
+  }
+  &.is-ring {
+    background-image: url(../images/maps/ring.jpg) ;
+    background-size: cover;
+  }
 }
 
 .life {
