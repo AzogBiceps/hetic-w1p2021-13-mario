@@ -154,7 +154,6 @@ function character() {
         element.classList.remove('selected');
         element.classList.remove('selectedPlayerTwo');
       }
-
     })
   });
 
@@ -180,7 +179,6 @@ document.getElementById("back").addEventListener("click", function(){
 
   });
 }
-
 
 function end(){
   console.log('endcaca')
@@ -224,6 +222,7 @@ function game(){
 }
 //   // let data.players = initFighters(data);
 //   // console.log(data.players);
+
 //   // // si turn = true J1 joue sinon J2 joue
 //   // //if turn = true J1 plays otherwise J2 plays
 //   let turn = true;
