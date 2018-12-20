@@ -1,6 +1,7 @@
 .content {
   display: flex;
-  flex-direction: row;
+  margin-left: 70px;
+  
 }
 .end {
     margin: 0;
@@ -23,28 +24,32 @@ img {
 }
 
 .content__crown1 {
-
+position: absolute;
   width: 200px;
   height: 100px;
+  left: 400px;
+  top: 268px;
 }
 
 .content__crown2 {
-
+position: absolute;
   width: 200px;
   height: 100px;
+  right: 400px;
+  top: 268px;
 }
-
-.content__winner {
-   font-size: 16px;
-   transform: translateY(-45px);
-   justify-content: space-evenly;
- }
 
  .button__pressToStart--end {
    font-size: 30px;
-   position: relative;
-   top: 100px;
+   position: absolute;
+   left: 0; 
+   right: 0; 
+   margin-left: auto; 
+   margin-right: auto; 
+   width: 100vw;
+   top: 310px;
    animation: blink 4s infinite;
+   font-family:  'PressStart2P';
  }
 
  @keyframes blink {

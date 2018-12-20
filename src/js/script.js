@@ -7,6 +7,7 @@ let data = {
 // let data.players = []
 
 window.appState = data;
+var lifebar;
 
 // Press ENTER to pass the home screen if characters is not already the currentscreen
 oxo.inputs.listenKey('enter', function() {
@@ -17,62 +18,6 @@ oxo.inputs.listenKey('enter', function() {
     oxo.screens.loadScreen('characters', character);
   }
 });
-
-// function character() {
-//   var elements = document.querySelectorAll('div.element');
-//   var count = 0;
-
-//   elements.forEach(element => {
-//     element.addEventListener('click', function() {
-//       console.log(count);
-//       if (count == 0){
-//         console.log('add')
-//         data.players.push(element.className.split(' ')[1])
-//         element.classList.add("selected");
-//         count++;
-//       } else if (count == 1 && !element.className.includes("selected")) {
-
-//         console.log('add other')
-//         data.players.push(element.className.split(' ')[1])
-//         element.classList.add(document.querySelector('.selectedPlayerTwo') ? 'selected' : 'selectedPlayerTwo');
-//         count++;
-//       } else if (element.className.includes("selected")) {
-//         count--;
-//         data.players = data.players.filter(function(player) { return player != element.className.split(' ')[1]; });
-//         data.players[count] == undefined;
-//         console.log(data.players[1]);
-//         element.classList.remove('selected');
-//         element.classList.remove('selectedPlayerTwo');
-//       }
-//       console.log(data.players);
-//       document.getElementById("go").addEventListener("click", function(){
-//         console.log(data.players);
-//         if (data.players[1] !== undefined && data.players[0] !== undefined) {
-
-//           console.log("Go")
-//           data.player1 = data.players[0]
-//           data.player2 = data.players[1]
-
-//           oxo.screens.loadScreen('maps', map);
-//         }
-
-//       });
-//     })
-
-//   });
-// }
-
-  // document.getElementById("back").addEventListener("click", function(){
-
-  //   // data.player1 = data.players[0]
-  //   data.players = []
-  //   count = 0
-  //   elements.forEach(element => {
-  //     element.classList.remove("selected");
-  //     element.classList.remove("selectedPlayerTwo");
-  //   })
-  // });
-
 
 function map(){
   var elements = document.querySelectorAll('div.element__maps');
@@ -102,19 +47,6 @@ function map(){
   })
 }
 
-
-oxo.inputs.listenKey('enter', function() {
-
-  if (oxo.screens.getCurrentScreen() !== 'home') {
-
-    oxo.screens.currentScreen = "home"
-
-    oxo.screens.loadScreen('home', (callback) => {
-      console.log(callback)
-    });
-  }
-});
-
 oxo.inputs.listenKey('enter', function() {
 
   console.log(oxo.screens.getCurrentScreen())
@@ -124,13 +56,10 @@ oxo.inputs.listenKey('enter', function() {
   }
 });
 
-
-
 function character() {
   var elements = document.querySelectorAll('div.element');
   var count = 0;
   
-
   elements.forEach(element => {
     element.addEventListener('click', function() {
       console.log(count);
@@ -158,8 +87,6 @@ function character() {
   });
 
 document.getElementById("back").addEventListener("click", function(){
-
-  // data.player1 = data.players[0]
   data.players = []
   count = 0
   elements.forEach(element => {
@@ -188,33 +115,92 @@ function end(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /** GAME */
 
 function game(){
+  lifebar = document.getElementById('lifebar');
+
+  lifebar.style.width = 5 * 10 + '%';
   console.log('GAME');
   // reation of data.players array with basics stats
   console.log(data);
   function initFighters(data){
+  
     //create a tab with J1 and J2 with features
-    //let data.players = [];
     data.players.push({'name':data.player1,'LP':10,'def':0},{'name':data.player2,'LP':10,'def':0});
 
     return data.players
+  } // select characters on the left
+  if (data.player1 == 'bastien') {
+    var characterLeft = document.getElementById("character__left");
+    characterLeft.classList.add('is-bastien'); 
   }
+  else if (data.player1 == 'rayan'){
+    var characterLeft = document.getElementById("character__left")
+    characterLeft.classList.add('is-rayan');
+  }
+  else if (data.player1 == 'maeva'){
+    var characterLeft = document.getElementById("character__left")
+    characterLeft.classList.add('is-maeva');
+  }
+  else if (data.player1 == 'baptiste'){
+    var characterLeft = document.getElementById("character__left")
+    characterLeft.classList.add('is-baptiste');
+  }
+  else if (data.player1 == 'mathias'){
+    var characterLeft = document.getElementById("character__left")
+    characterLeft.classList.add('is-mathias');
+  }
+  else if (data.player1 == 'justine'){
+    var characterLeft = document.getElementById("character__left")
+    characterLeft.classList.add('is-justine');
+  }
+  else if (data.player1 == 'brontis'){
+    var characterLeft = document.getElementById("character__left")
+    characterLeft.classList.add('is-brontis');
+  }
+  else if (data.player1 == 'aymeric'){
+    var characterLeft = document.getElementById("character__left")
+    characterLeft.classList.add('is-aymeric');
+  }
+
+  if (data.player2 == 'bastien') {
+    var characterLeft = document.getElementById("character__right");
+    characterLeft.classList.add('is-bastien'); 
+  }
+  else if (data.player2 == 'rayan'){
+    var characterLeft = document.getElementById("character__right")
+    characterLeft.classList.add('is-rayan');
+  }
+  else if (data.player2 == 'maeva'){
+    var characterLeft = document.getElementById("character__right")
+    characterLeft.classList.add('is-maeva');
+  }
+  else if (data.player2 == 'baptiste'){
+    var characterLeft = document.getElementById("character__right")
+    characterLeft.classList.add('is-baptiste');
+  }
+  else if (data.player2 == 'mathias'){
+    var characterLeft = document.getElementById("character__right")
+    characterLeft.classList.add('is-mathias');
+  }
+  else if (data.player2 == 'justine'){
+    var characterLeft = document.getElementById("character__right")
+    characterLeft.classList.add('is-justine');
+  }
+  else if (data.player2 == 'brontis'){
+    var characterLeft = document.getElementById("character__right")
+    characterLeft.classList.add('is-brontis');
+  }
+  else if (data.player2 == 'aymeric'){
+    var characterLeft = document.getElementById("character__right")
+    characterLeft.classList.add('is-aymeric');
+  }
+  if (data.map == 'arena'){
+    var bg = document.getElementById("background")
+    bg.classList.add('')
+  }
+
   document.getElementById("gosef").addEventListener("click", function(){
     console.log("end");
     oxo.screens.loadScreen('end', end);

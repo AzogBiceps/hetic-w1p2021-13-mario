@@ -23,11 +23,11 @@
 }
 
 .character__left {
-  height: 70vh;
+  height: 60vh;
   width: 30vw;
   position: absolute;
-  left: 10%;
-  top: 30%;
+  left: 15%;
+  top: 40%;
 
   &.is-rayan {
     background-image: url(../images/fighters/Rayan/RayanNormalG.png);
@@ -37,38 +37,38 @@
     background-image: url(../images/fighters/Maeva/MaevaNormalG.png);
     background-size: cover;
   }
-  &.-baptiste {
+  &.is-baptiste {
     background-image: url(../images/fighters/Baptiste/BaptisteNormalG.png);
     background-size: cover;
   }
-  &.-mathias {
+  &.is-mathias {
     background-image: url(../images/fighters/Mathias/MathiasNormalG.png);
     background-size: cover;
   }
-  &.-justine {
+  &.is-justine {
     background-image: url(../images/fighters/Justine/JustineNormalG.png);
     background-size: cover;
   }
-  &.-brontis {
+  &.is-brontis {
     background-image: url(../images/fighters/Brontis/BrontisNormalG.png);
     background-size: cover;
   }
-  &.-bastien {
+  &.is-bastien {
     background-image: url(../images/fighters/Bastien/BastienNormalG.png);
     background-size: cover;
   }
-  &.-aymeric {
+  &.is-aymeric {
     background-image: url(../images/fighters/Aymeric/AymericNormalG.png);
     background-size: cover;
   }
 }
 
 .character__right {
-  height: 70vh;
+  height: 60vh;
   width: 30vw;
   position: absolute;
-  left: 80%;
-  top: 30%;
+  left: 52%;
+  top: 40%;
 
   &.is-rayan {
     background-image: url(../images/fighters/Rayan/RayanNormalD.png);
@@ -78,28 +78,47 @@
     background-image: url(../images/fighters/Maeva/MaevaNormalD.png);
     background-size: cover;
   }
-  &.-baptiste {
+  &.is-baptiste {
     background-image: url(../images/fighters/Baptiste/BaptisteNormalD.png);
     background-size: cover;
   }
-  &.-mathias {
+  &.is-mathias {
     background-image: url(../images/fighters/Mathias/MathiasNormalD.png);
     background-size: cover;
   }
-  &.-justine {
+  &.is-justine {
     background-image: url(../images/fighters/Justine/JustineNormalD.png);
     background-size: cover;
   }
-  &.-brontis {
+  &.is-brontis {
     background-image: url(../images/fighters/Brontis/BrontisNormalD.png);
     background-size: cover;
   }
-  &.-bastien {
+  &.is-bastien {
     background-image: url(../images/fighters/Bastien/BastienNormalD.png);
     background-size: cover;
   }
-  &.-aymeric {
+  &.is-aymeric {
     background-image: url(../images/fighters/Aymeric/AymericNormalD.png);
     background-size: cover;
+  }
+}
+
+.background {
+  width:100wh;
+  height:100wh;
+ 
+}
+
+.life {
+  width: 300px;
+  height: 20px;
+  position: fixed;
+  top: 0;
+
+  div {
+    height: 100%;
+    width: 100%;
+    background: red;
   }
 }
