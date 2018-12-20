@@ -1,3 +1,7 @@
+.content {
+  display: flex;
+  flex-direction: row;
+}
 .end {
     margin: 0;
     padding: 0;
@@ -12,25 +16,25 @@ img {
 }
 
 .home__logo--end {
-  height: 250px;
+  height: 200px;
   display: flex;
   justify-content: center;
 
 }
 
-.crown1 {
-  display: flex;
+.content__crown1 {
+
   width: 200px;
   height: 100px;
 }
 
-.crown2 {
-  display: flex;
+.content__crown2 {
+
   width: 200px;
   height: 100px;
 }
 
-.winner {
+.content__winner {
    font-size: 16px;
    transform: translateY(-45px);
    justify-content: space-evenly;

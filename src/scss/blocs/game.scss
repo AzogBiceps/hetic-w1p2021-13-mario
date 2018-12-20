@@ -1,10 +1,33 @@
 .game__logo {
-  height: 250px;
+  height: 200px;
   margin-top: 10px;
   text-align: center;
 }
 
 .snake__left, .snake__right {
-  height: 150px;
-  margin-top: 295px;
+  height: 30vh;
+  width: 25vw;
+  bottom: 0%;
+}
+
+.snake__right {
+  left: 40px;
+}
+
+.gosef {
+  position: absolute;
+
+}
+
+.character__left {
+  height: 70vh;
+  width: 30vw;
+  position: absolute;
+  left: 10%;
+  top: 30%;
+
+  &.is-rayan {
+    background-image: url(../images/fighters/Rayan/RayanNormalG.png);
+    background-size: cover;
+  }
 }
